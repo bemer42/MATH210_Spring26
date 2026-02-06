@@ -1,0 +1,112 @@
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{pgflibraryarrows}
+\usepackage{pgflibrarysnakes}
+\usepackage{upgreek}
+\usepackage{tipa}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage{floatrow}
+\usepackage{gensymb}
+\usepackage{caption}
+
+\usepackage{versions}
+\excludeversion{sol}
+\includeversion{sol}
+\newenvironment{solution}{
+\sol\\{\sc{Solution:}}}{
+$\hfill\blacksquare$\endsol}
+
+\def\|{||}
+\def\R{\textbf{R}}
+\def\C{\mathbb{C}}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+
+\DeclareCaptionLabelFormat{andtable}{#1~#2  \&  \tablename~\thetable}
+
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
+\newcommand{\pddd}[2]{\frac{\partial^3 #1}{\partial {#2}^3}}
+\newcommand{\de}[2]{\frac{d #1}{d #2}}
+\newcommand{\ppdd}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
+
+\newtheorem*{1}{Problem 1}
+\newtheorem*{2}{Problem 2}
+\newtheorem*{3}{Problem 3}
+\newtheorem*{4}{Problem 4}
+
+
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\setlength\headsep{30pt}
+\lhead{Phase 1 Worksheet}
+\rhead{Kutztown University -- MATH 210}
+
+\fancyfoot{}
+
+
+%\rfoot{\tiny\textcopyright \textcolor{gray}{Brooks Emerick}}
+
+\begin{document}
+
+\begin{center}
+\Large{\textsc{Phase 1 (part 2): Optimization on an Interval}}\\
+\end{center}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}[{$1.]$}]
+
+
+\item \textsc{Wire Problem:}  A 50-inch piece of wire is to be cut into two pieces (a portion of length $x$ and a portion of length $50-x$, see figure below), which are then bent into a square and a circle, respectively.  Where should the wire be cut (i.e. what is $x$?) in order to minimize the sum of the areas of these two shapes?  Where should it be cut to maximize the sum of the areas? To solve both problems, formulate a function $f(x)$ that represents the sum of the two areas in terms of $x$, then use the Closed Interval Method to determine the absolute minimum (and maximum) on the interval $x\in [0, 50]$.  
+ 
+ \begin{center}
+ 	\hspace{-2cm}\includegraphics[width = .765\textwidth]{P1WS2_Figure_1.png}	\vfill
+\end{center}
+
+
+
+\pagebreak
+
+\item \textsc{Pivot Problem:}  Two perpendicular hallways, one of width 6 ft and the other of width 5 ft, meet at a right-angle corner. A rigid ladder (modeled as infinitely thin) is carried horizontally around the corner. What is the longest ladder that can make the turn?
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
