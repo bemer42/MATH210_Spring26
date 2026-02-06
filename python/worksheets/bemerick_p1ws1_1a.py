@@ -9,7 +9,8 @@ import matplotlib.pyplot as plt
 from scipy import optimize
 
 # Objective: This script outputs some basic plotting commands 
-# associated to Phase 1 - Worksheet 1 problem 1a.
+# associated to Phase 1 - Worksheet 1 problem 1a.  This file uses 
+# scipy optimize with root_scalar to find critical points.
 
 # Discretize the domain with a vector, x
 N = int(1e3)
