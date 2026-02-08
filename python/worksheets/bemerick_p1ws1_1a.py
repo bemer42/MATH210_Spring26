@@ -1,9 +1,3 @@
-"""
-Created on Sun Feb  1 22:15:26 2026
-
-@author: brooksemerick
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import optimize
@@ -33,7 +27,7 @@ c = np.array([c_1.root, c_2.root])
 plt.figure(1)
 plt.plot(x, f(x), 'k-', linewidth=3, label='y = f(x)')
 plt.plot(c, f(c), 'ro', linewidth=3, label='critical points')
-plt.title('P1WS1 Polynomial with Critical Points', fontsize=20)
+plt.title('Polynomial with Critical Points', fontsize=20)
 plt.xlabel('x', fontsize=15)
 plt.ylabel('y=f(x)', fontsize=15)
 plt.xticks(fontsize=10)
@@ -49,4 +43,3 @@ plt.show()
 # Save the file in high quality format as eps and png: 
 plt.savefig('p1ws1_1a_plot.eps', format='eps')
 plt.savefig('p1ws1_1a_plot.png', format='png')
-

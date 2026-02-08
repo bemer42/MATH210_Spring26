@@ -1,20 +1,15 @@
-"""
-Created on Thu Feb  5 22:23:09 2026
-
-@author: brooksemerick
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import optimize
 
 # Objective: This script outputs some basic plotting commands 
 # associated to Phase 1 - Worksheet 1 problem 1b.  This file 
-# uses a numerical finite difference derivative function. 
+# uses a numerical finite difference derivative function to locate
+# critical points with optimize.root_scalar. 
 
 # Discretize the domain with a vector, x
-N = int(1e3)
-x = np.linspace(-1, 4, N)  
+N = int(1e4)
+x = np.linspace(-1,4,N)
 
 # Create the function in part 1a
 f = lambda x: np.cbrt(x) * (x-2) ** 2
@@ -27,26 +22,25 @@ fp = lambda x: (f(x+h)-f(x-h)) / 2 / h
 c_1 = optimize.root_scalar(fp, bracket=(2/7-.1, 2/7+.1), method="brentq")
 c_2 = optimize.root_scalar(fp, bracket=(2-.1, 2+.1), method="brentq")
 
-# Compile both roots into an array
-c = np.array([c_1.root, c_2.root])
+# Use optimize.minimize_scalar to locate the origin where the 
+# slope is very large (infinite)
+c_3 = optimize.minimize_scalar(lambda x: -fp(x),bracket=(-1e-3,1e-3))
 
-for x_inf in x:
-    dfdx = fp(x_inf)
-    if np.isfinite(dfdx) and abs(dfdx) > 1e2:
-        c = np.append(c,x_inf)
+# Compile both roots into an array
+c = np.array([c_1.root, c_2.root, c_3.x])
 
 # Plot the graph of the function
 plt.figure(1)
 plt.plot(x, f(x), 'k-', linewidth=3, label='y = f(x)')
 plt.plot(c, f(c), 'ro', linewidth=3, label='critical points')
-plt.title('P1WS1 Polynomial with Critical Points', fontsize=20)
+plt.title('Algebraic Function with Critical Points', fontsize=20)
 plt.xlabel('x', fontsize=15)
 plt.ylabel('y=f(x)', fontsize=15)
 plt.xticks(fontsize=10)
 plt.yticks(fontsize=10)
 plt.grid(True, which='both')
 plt.xlim([np.min(x), np.max(x)])
-# plt.ylim([np.min(f(x)), np.max(f(x))])
+plt.ylim([np.min(f(x)), np.max(f(x))])
 plt.legend()
 
 # Show the plot:
