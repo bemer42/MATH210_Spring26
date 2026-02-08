@@ -39,8 +39,6 @@ for i in range(1, len(L_vec)):
     
 
 
-
-
 # Create a general numerical derivative using a centered difference
 h = 1e-5
 fp = lambda x: (f(x+h)-f(x-h)) / 2 / h
