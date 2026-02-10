@@ -1,0 +1,107 @@
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{pgflibraryarrows}
+\usepackage{pgflibrarysnakes}
+\usepackage{upgreek}
+\usepackage{tipa}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage{floatrow}
+\usepackage{gensymb}
+\usepackage{caption}
+
+\usepackage{versions}
+\excludeversion{sol}
+\includeversion{sol}
+\newenvironment{solution}{
+\sol\\{\sc{Solution:}}}{
+$\hfill\blacksquare$\endsol}
+
+\def\|{||}
+\def\R{\textbf{R}}
+\def\C{\mathbb{C}}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+
+\DeclareCaptionLabelFormat{andtable}{#1~#2  \&  \tablename~\thetable}
+
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
+\newcommand{\pddd}[2]{\frac{\partial^3 #1}{\partial {#2}^3}}
+\newcommand{\de}[2]{\frac{d #1}{d #2}}
+\newcommand{\ppdd}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
+
+\newtheorem*{1}{Problem 1}
+\newtheorem*{2}{Problem 2}
+\newtheorem*{3}{Problem 3}
+\newtheorem*{4}{Problem 4}
+
+
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\setlength\headsep{30pt}
+\lhead{Phase 1 Worksheet}
+\rhead{Kutztown University -- MATH 210}
+
+\fancyfoot{}
+
+
+%\rfoot{\tiny\textcopyright \textcolor{gray}{Brooks Emerick}}
+
+\begin{document}
+
+\begin{center}
+\Large{\textsc{Phase 1 (part 3): Optimization with Parameters}}\\
+\end{center}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}[{$1.]$}]
+
+\item Consider the wire cutting problem again, where we are cutting the wire to make a square and circle with the minimal area.  Suppose the wire has length $L$.  How does the ``cut mark'' denoted by $x$ depend on the length of the wire $L$?  How does the minimal area, $f_{min}$, depend on $L$? \vfill
+
+\item Consider the following optimization problems that we may have experienced from Calculus I. 
+
+\begin{enumerate}[{$\quad a.)$}] 
+	\item A homeowner is in the process of building a backyard vegetable garden.  The garden must take on a rectangular shape to facilitate row irrigation.  To keep critters out, the garden must be fenced.  The owner has $P$ ft of fencing.  The goal is to fence in the largest possible area. Find the dimensions of the garden in terms of $P$. \vfill
+	\item Suppose the homeowner was building the garden along the side of his house and they only need three sides to enclose the rectangular shape.  Assuming $A$ ft$^2$ is the area that the owner needs to fence in, what are the dimensions of the optimal layout and what is the smallest amount of fencing? Your answer should be in terms of $A$.\vfill
+\end{enumerate}
+
+
+\pagebreak
+
+\item You work for a packaging company that designs an open-top shipping container with a square base that must hold exactly $V$ cubic units.  The base material costs $c_b$ dollars per square unit and the side material costs $c_s$ dollars per square unit.  Choose the base side length and the height to minimize the total material cost while meeting the volume requirement.  
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
