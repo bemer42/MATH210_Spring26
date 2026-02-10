@@ -1,0 +1,189 @@
+\documentclass[]{exam}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[top=1in, bottom=1.5in, left=1in, right=1in]{geometry}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{empheq}
+\usepackage{mathrsfs}
+\checkboxchar{$\Box$}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage{comment}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{advdate}
+\usepackage{gensymb}
+\usetikzlibrary{arrows}
+\usepackage{multirow}
+\usepackage{arydshln}
+\usepackage{verbatim}
+
+\usepackage{pgfkeys,pgfcalendar}
+
+\newcount\pgfdatecount
+\newcommand{\tomorrow}{%
+\pgfcalendardatetojulian{\year-\month-\day+1}{\pgfdatecount}
+\pgfcalendarjuliantodate{\the\pgfdatecount}{\myyear}{\mymonth}{\myday}
+\pgfcalendarmonthname{\mymonth}\space\myday,\space\myyear%
+}
+
+\newcommand{\advanceday}[1][1]{
+\begingroup
+\AdvanceDate[#1]
+\today
+\endgroup}
+
+\newcommand{\vertex}{\node[vertex]}
+\tikzstyle{vertex}=[circle, draw, inner sep=0pt, minimum size=6pt]
+\usepackage{lastpage} 
+\usepackage{extramarks}
+\usepackage{graphicx} 
+\usepackage{tikz}
+\usepackage{sectsty} 
+\usepackage{amsmath,amsfonts,amsthm} 
+\usepackage{wrapfig, blindtext}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+\numberwithin{equation}{section}
+\linespread{1.1} 
+\setlength\parindent{0pt} 
+\setlength\answerskip{-.075in}
+\setlength\answerlinelength{.5in}
+\newcommand{\myitem}{\item[-]}
+
+% HEADER AND FOOTER
+\pagestyle{headandfoot}
+\runningheadrule
+\runningfootrule
+\firstpageheader{Kutztown University}{  }{MATH 210}
+\firstpageheadrule
+\runningheader{P1.H1}{ }{MATH 210}
+\firstpagefooter{}{}{} 
+\runningfooter{}{}{Page \thepage\ of \numpages}
+
+
+% TITLE PAGE
+\newcommand{\assignmentname}{Phase 1 -- Homework I} % Assignment title
+\newcommand{\coursetitle}{MATH 210 -- Mathematical Computing and Typesetting}
+\newcommand{\duedate}{Due: Friday, February 6 by 11:59 PM on D2L} % Class/lecture time
+\newcommand{\readsections}{\, } % Teacher/lecturer
+\newcommand{\semester}{\, }
+\title{
+\vspace{2in}
+\textmd{\textbf{\course:\ \assignmentname}}\\
+\normalsize\vspace{0.1in}{\duedate}\\
+\vspace{0.1in}\large{\textit{\instructor}}
+\vspace{3in}
+}
+\author{\textbf{Author: \authorname}}
+\date{Last Updated: \today}
+
+\pointsinrightmargin
+\bracketedpoints
+
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COMPILE TITLES AND SUCH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hspace{1in}\\ \vspace{.15in}
+
+
+\begin{center}
+\normalsize
+ \fbox{\fbox{\parbox{5.5in}{
+        {\bf Instructions:}  Upload the \texttt{tex} file for this document to your Overleaf project.  All solutions shall be completed on this packet by typing your solution in \LaTeX\, in the space provided.  All solutions should be detailed and should clearly demonstrate the process by which you arrived at the answer.  Submit the compiled \texttt{pdf} file to D2L by 11:59 PM on the due date below.  Submit only a single pdf file of your entire packet.  The question will also ask you to make calculations in Python.  Upload any Python files to the appropriate folder in your GitHub repository.  In this folder, a \texttt{py} file is to be submitted for each problem such that when the \texttt{py} file is executed, the output (as presented in Python) is the solution to the problem. Academic dishonesty will not be tolerated.  }}}
+\end{center}
+
+\vspace{.5cm}
+
+\begin{center}
+	\Huge\textsc{
+	\assignmentname}\\[4pt]
+        \Large{\textsc{\coursetitle}\\[10pt]}
+        \Large{\textsc{\duedate}\\[8pt]}
+        \Large{\textsc{\readsections}\\[8pt]}
+\end{center}
+
+\vspace{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Uncomment the syntax below when you type up the solutions and type 
+% your name.
+\begin{center}
+	\large{\textsc{\textcolor{red}{Solutions by [YOUR NAME HERE]}}}
+\end{center}
+\vfill
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Reminders:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Remember to begin your \texttt{py} file with \texttt{import numpy as np} and \verb|import matplotlib.pyplot as plt|.  Also, for this assignment, you'll need \texttt{from scipy.optimize import minimize} for finding relative extrema of functions.  
+
+
+
+% Blank Page
+\clearpage
+
+\begin{questions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NUMBER 1 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\question Define the function 
+	\[ \displaystyle f(x) =  \frac{x}{30} - e^{-\frac{x}{6}}\cos(x)\]
+in a Python file.  In the space below, determine the derivative function and type it, centered in math display mode.  
+
+\vspace{3cm}
+
+In the Python file, define the derivative function as well.  Graph both functions on the same graph.  The graph should be black, solid, and have line width 3.  The title should be \texttt{Homework 1, Plot 1}.  Use \texttt{plt.xlim} and \texttt{plt.ylim} to create a ``tight'' window, i.e., the $x$-axis should span from $-5$ to $20$ and the $y$-axis should span from the minimum value of $y$ to the maximum value of $y$.  The plot should show a legend.  Your code should save this plot as a high resolution \texttt{eps} file.  (Hint: consider the commands \texttt{np.min()} and \texttt{np.max()}.)  Include the graph in the space below.  
+
+\vfill
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NUMBER 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\question Consider the function 
+\[y = x^3-7x^2+10x\]
+over the interval $x\in [-1,6]$.  
+
+\begin{parts}
+	\part Determine the equation of the tangent line to this graph at $x = 1$, $x = 3$ and $x = 5$.  Type your work below explicitly showing the derivative function and the three tangent line equations. 
+
+\vspace{3cm}
+
+In a Python file, define $y$ and the tangent lines as functions.  Plot $y$ over the interval $[1, 6]$ in solid black with line width 3 with title \texttt{Homework 1, Plot 2}.  Plot on this same graph the tangent lines to the curve at $x = 1$, $x = 3$, and $x = 5$ in red, green, and blue lines, respectively.  Provide a legend.  Your code should save this plot as a high resolution \texttt{eps} file. Include the graph in the space below. 
+
+\vspace{3cm}
+
+	\part Find the exact values of the critical points of this function ($x$ value only) and type your work and solution in the space below. 
+	
+\vspace{3cm}
+
+In the same Python file, use \texttt{minimize} to compute both the relative minimum and maximum value of $y$ on the interval $[-1,6]$.  Report the results below to three decimals and confirm that your exact solution matches.   
+	
+\vspace{3cm}
+
+\end{parts}
+
+\pagebreak
+
+
+
+
+
+\end{questions}
+\end{document} 
