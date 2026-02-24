@@ -1,0 +1,87 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Main Preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{pgflibraryarrows}
+\usepackage{pgflibrarysnakes}
+\usepackage{upgreek}
+\usepackage{tipa}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage{floatrow}
+\usepackage{gensymb}
+\usepackage{caption}
+
+\usepackage[T1]{fontenc}
+\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+
+\DeclareCaptionLabelFormat{andtable}{#1~#2  \&  \tablename~\thetable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header/footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\setlength\headsep{30pt}
+\lhead{P2.WS2}
+\rhead{Kutztown University -- MATH 210}
+\fancyfoot{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\Large{\textsc{Phase 2 (part 2): Polynomial Interpolation }}\\
+\end{center}
+
+\begin{enumerate}[{$1.]$}]
+
+\item Suppose you want to interpolate the points $(-1, 0)$, $(0,1)$, $(2,0)$, $(3,1)$, and $(4,2)$ by a polynomial of as low a degree as possible. 
+
+\begin{enumerate}[{$\quad a.)$}]
+	\item What degree should you expect this polynomial to be?  \vspace{1cm}
+	\item Write out a linear system of equations for the coefficients of the interpolating polynomial.  \vfill
+	\item Create a Python program that solves this system numerically and report the solution below. \vspace{1cm} 
+\end{enumerate}
+
+
+\pagebreak
+\item The table below shows the population figures (in millions) for three countries over the same 30-year period.  Plot the data and interpolating polynomial on the same graph. 
+
+\begin{center}
+\begin{tabular}{ c   c   c  c}
+\hline
+Year & United States & China & German \\ 
+\hline
+1980 & 227.225 & 984.736 & 78.298  \\ 
+1990 & 249.623 & 1148.364 & 79.380 \\ 
+2000 & 282.172 & 1263.638 & 82.184 \\ 
+2010 & 308.282 & 1330.141 & 81.644 \\\hline \hline
+\end{tabular}
+\end{center}
+
+Create a single file that outputs the following: 
+\begin{enumerate}[{$\quad a.)$}]
+	\item Use cubic polynomial interpolation to estimate the population of China in 1992. 
+	\item Use cubic polynomial interpolation to estimate the population of the USA in 1984. 
+	\item Use cubic polynomial interpolation to make plot of the German population from 1980 to 2010.  Your plot should show a smooth curve and be well annotated. 
+\end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}
