@@ -16,14 +16,15 @@ A = np.vander(x, increasing=True)
 A = A[:, :(n+1)]
 
 # Define the constrained matrix
-B = A[[0,N-1],:]
-# B = np.empty((2,n))
-# for i in range(0,n):
-#     B[0,i] = x[0]**i
-#     B[-1,i] = x[-1]**i
+# B = A[[0,N-1],:]
+B = np.empty((3,n+1))
+for i in range(n+1):
+    B[0,i] = x[0]**i
+    B[1,i] = x[-1]**i
+    B[2,i] = 1
 
 # Define the constrained right hand side
-z = np.array([y[0],y[-1]])
+z = np.array([y[0],y[-1],1])
 
 # Solve the linear system for the coefficient vector c
 result = lapack.dgglse(A,B,y,z)
