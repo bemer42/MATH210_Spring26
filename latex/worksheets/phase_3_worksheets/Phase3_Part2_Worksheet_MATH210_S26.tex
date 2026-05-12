@@ -1,0 +1,139 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% P3.WS2 (Day 2 Worksheet) -- Same format as P3.WS1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{pgflibraryarrows}
+\usepackage{pgflibrarysnakes}
+\usepackage{upgreek}
+\usepackage{tipa}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage{floatrow}
+\usepackage{gensymb}
+\usepackage{caption}
+
+\usepackage[T1]{fontenc}
+\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+
+\DeclareCaptionLabelFormat{andtable}{#1~#2  \&  \tablename~\thetable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header/footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\setlength\headsep{30pt}
+\lhead{P3.WS2}
+\rhead{Kutztown University -- MATH 210}
+\fancyfoot{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\Large{\textsc{Phase 3 (part 2): Layers and the Interaction Parameter}}\\
+\end{center}
+
+\begin{enumerate}[{$1.]$}]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Consider a network on nodes $\{A,B,C,D,E\}$ with two interaction layers:
+\[ A(\alpha)=A_{\text{strong}}+\alpha A_{\text{weak}}, \qquad \alpha\ge 0. \]
+Below are the two weighted, undirected adjacency matrices. 
+
+\[ A_{\text{strong}} = 
+\begin{bmatrix}
+0 & 4 & 2 & 0 & 1 \\
+4 & 0 & 3 & 2 & 0 \\
+2 & 3 & 0 & 1 & 2 \\
+0 & 2 & 1 & 0 & 5 \\
+1 & 0 & 2 & 5 & 0 \end{bmatrix}  \qquad A_{\text{weak}} = 
+\begin{bmatrix}
+0 & 5 & 4 & 4 & 5 \\
+5 & 0 & 1 & 0 & 1 \\
+4 & 1 & 0 & 1 & 0 \\
+4 & 0 & 1 & 0 & 1 \\
+5 & 1 & 0 & 1 & 0  \end{bmatrix} \]
+
+\begin{enumerate}[{$a.)$}]
+
+
+\item Compute $A(0.5)$.
+\vfill
+
+
+
+\item For any $\alpha$, compute the strength of nodes $A$ and $B$, denoted by $s_A(\alpha)$ and $s_B(\alpha)$, respectively. 
+\vfill
+
+\item For which values of $\alpha$ does node $A$ have larger strength than node $B$?
+
+\vfill
+
+
+\end{enumerate}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Let $V=\{1,2,\dots,10\}$ and consider the complete graph on these nodes. We define two weighted layers:
+
+\begin{itemize}
+\item $A_{\text{strong}}$: for $i\ne j$,
+\[
+w^{(s)}_{ij}=
+\begin{cases}
+6 & \text{if } i,j\in S=\{1,2,3,4\},\\
+4 & \text{if } i,j\in T=\{5,6,7\},\\
+2 & \text{if } i,j\in U=\{8,9,10\},\\
+1 & \text{if } i \text{ and } j \text{ are in different groups.}
+\end{cases}
+\]
+\item $A_{\text{weak}}$: for $i\ne j$,
+\[
+w^{(w)}_{ij}=
+\begin{cases}
+5 & \text{if } i=10 \text{ or } j=10,\\
+1 & \text{otherwise.}
+\end{cases}
+\]
+\end{itemize}
+
+Define the combined network:
+\[
+A(\alpha)=A_{\text{strong}}+\alpha A_{\text{weak}},\qquad \alpha\ge 0.
+\]
+
+\begin{enumerate}[{$a.)$}]
+\item Compute the combined edge weight $w_{2,6}(\alpha)$ between nodes 2 and 6.
+\vfill
+
+\item Compute the combined edge weight $w_{3,10}(\alpha)$ between nodes 3 and 10.
+\vfill
+
+\item Compute the strength of node 1, node 8, and node 10 as functions of $\alpha$.
+\vfill
+
+\item Solve for the value(s) of $\alpha$ where $s_{10}(\alpha)=s_1(\alpha)$.
+\vfill
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

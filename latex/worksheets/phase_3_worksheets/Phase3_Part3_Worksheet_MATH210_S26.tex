@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% P3.WS3 (Day 3 Worksheet) -- Same format as P3.WS2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{pgflibraryarrows}
+\usepackage{pgflibrarysnakes}
+\usepackage{upgreek}
+\usepackage{tipa}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage{floatrow}
+\usepackage{gensymb}
+\usepackage{caption}
+
+\usepackage[T1]{fontenc}
+\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+
+\DeclareCaptionLabelFormat{andtable}{#1~#2  \&  \tablename~\thetable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header/footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\setlength\headsep{30pt}
+\lhead{P3.WS3}
+\rhead{Kutztown University -- MATH 210}
+\fancyfoot{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\Large{\textsc{Phase 3 (part 3): Centrality and Matrix Methods}}\\
+\end{center}
+
+\begin{enumerate}[{$1.]$}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Consider the unweighted, undirected network on nodes $\{1,2,3,4\}$ with edges
+\[
+\{(1,2),(1,3),(1,4)\}.
+\]
+
+\begin{enumerate}[{$a.)$}]
+\item Compute the degree of each node.
+\vfill
+
+\item The vector $\boldsymbol{x}$ is an eigenvector of $A$ if it is nonzero and satisfies the equation
+\[ A\boldsymbol{x} = \lambda \boldsymbol{x}\]
+for some scalar $\lambda$.  Write the system of equations relating $x_1,x_2,x_3,x_4$ and solve for possible values of $\lambda$. 
+\vfill\vfill
+
+\item Find the eigenvector corresponding to the highest positive eigenvalue. 
+\vfill
+
+\item Which node has the highest centrality? Does this match your intuition?
+\vfill
+\end{enumerate}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Consider the weighted graph with edges:
+\[
+(A,B,3), (B,C,2), (A,D,4), (B,E,5), (C,F,1), (D,E,2), (E,F,3), (B,D,2).
+\]
+
+\begin{enumerate}[{$a.)$}]
+\item Build this graph in Python using \texttt{networkx}. 
+
+\item Compute the strength of each node. Which node has the largest strength?
+\vfill
+
+\item Compute the closeness centrality, betweenness centrality, and eigenvector centrality.
+List the nodes in order from largest to smallest for each centrality.
+\vfill\vfill
+
+\item Do all the centrality rankings agree? If not, why might different centralities disagree?
+\vfill
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

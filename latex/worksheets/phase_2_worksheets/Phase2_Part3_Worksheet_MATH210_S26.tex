@@ -1,0 +1,76 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Main Preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{pgflibraryarrows}
+\usepackage{pgflibrarysnakes}
+\usepackage{upgreek}
+\usepackage{tipa}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage{floatrow}
+\usepackage{gensymb}
+\usepackage{caption}
+
+\usepackage[T1]{fontenc}
+\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+
+\DeclareCaptionLabelFormat{andtable}{#1~#2  \&  \tablename~\thetable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header/footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\setlength\headsep{30pt}
+\lhead{P2.WS3}
+\rhead{Kutztown University -- MATH 210}
+\fancyfoot{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\Large{\textsc{Phase 2 (part 3): (Non)Linear Curve-Fitting}}\\
+\end{center}
+
+\begin{enumerate}[{$1.]$}]
+
+\item A lot of real-world data is exponential in nature and so fitting a function of the form $f(x) =  ae^{bx}$ is necessary.  Show that for any set of data, fitting this curve can be transformed into a linear fitting problem. \vfill
+
+
+\item A lot of real-world data is logistic in nature and so fitting a function of the form $f(x) = \displaystyle \frac{1}{1 + ae^{-bx}}$ is necessary.  Here, $a$ and $b$ are both strictly positive.  Show that for any set of data, fitting this curve can be transformed into a linear fitting problem. \vfill
+
+
+
+\pagebreak
+
+\item Similar to the previous example, we may want to fit a ``Witch of Agnesi" function to specific data.  This function has the form $\displaystyle f(x) = \frac{a}{bx^2 + 1}$, and looks similar to a Normal curve.  Here, $a>0$ is a parameter that controls the height of the centered peak, and $b>0$ controls the width.  Show that a function of this form can be fit to data by transforming it into a linear problem. \vfill
+
+
+
+\item Data may following a periodic or sinusoidal pattern.  Therefore, fitting sinusoidal data to a function such as 
+\[ f(x) = c_0 + c_1\sin(x) + c_2\cos(x) + c_3\sin(2x) + c_4\cos(2x), \]
+may be beneficial.  Show that fitting this function to data is also a linear least-squares problem. \vfill
+
+
+
+
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,116 @@
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{pgflibraryarrows}
+\usepackage{pgflibrarysnakes}
+\usepackage{upgreek}
+\usepackage{tipa}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage{floatrow}
+\usepackage{gensymb}
+\usepackage{caption}
+
+\usepackage{versions}
+\excludeversion{sol}
+\includeversion{sol}
+\newenvironment{solution}{
+\sol\\{\sc{Solution:}}}{
+$\hfill\blacksquare$\endsol}
+
+\def\|{||}
+\def\R{\textbf{R}}
+\def\C{\mathbb{C}}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+
+\DeclareCaptionLabelFormat{andtable}{#1~#2  \&  \tablename~\thetable}
+
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial {#2}^2}}
+\newcommand{\pddd}[2]{\frac{\partial^3 #1}{\partial {#2}^3}}
+\newcommand{\de}[2]{\frac{d #1}{d #2}}
+\newcommand{\ppdd}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
+
+\newtheorem*{1}{Problem 1}
+\newtheorem*{2}{Problem 2}
+\newtheorem*{3}{Problem 3}
+\newtheorem*{4}{Problem 4}
+
+
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\setlength\headsep{30pt}
+\lhead{P4.WS1}
+\rhead{Kutztown University -- MATH 210}
+
+\fancyfoot{}
+
+
+%\rfoot{\tiny\textcopyright \textcolor{gray}{Brooks Emerick}}
+
+\begin{document}
+
+\begin{center}
+\Large{\textsc{Phase 4 (part 1): First-Order Autonomous ODEs}}\\
+\end{center}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}[{$1.]$}]
+
+\item Let $y(t)$ be the quantity or concentration of a substance at time $t$.  Then $y(t)$ experiences exponential growth or decay if it satisfies the following initial value problem: 
+\[ \frac{dy}{dt} = ky \qquad \quad y(0) = y_0, \]
+where $(t_0, y_0)$ is a known point on the graph of $y(t)$ and $k$ is the per capita growth/decay rate.  Here, $y(0)$ is called the initial data. Solve this IVP.  \vfill
+
+
+
+\item According to Newton's Law of Cooling, the rate of change of temperature of a cooling object is proportional to the temperature \textit{difference} between the object and the surrounding medium.  That is, 
+\[ \frac{dy}{dt} = -k \left( y - y_s\right), \qquad \quad y(0) = y_0 \]
+where $y(t)$ is the temperature of the object at time $t$, and $y_s$ is the temperature of the surroundings, assumed to be constant.  Here, $k>0$.  Solve this IVP.  What is the equilibrium temperature? \vfill \vfill
+
+
+
+\pagebreak 
+\item Let $y(t)$ be the size of a population of interest at time $t$.  Given limited resources or space to expand, many populations experience \textit{logistic} growth at a per capita rate $k>0$ to a \textit{carrying capacity}, $m$:
+
+\[ \frac{dy}{dt} =ky \left( 1 - \frac{y}{m}\right), \qquad \quad y(0) = y_0 .\]
+
+Here, $k$ and $m$ are both strictly positive.  Solve this ODE for $y(t)$ and determine the equilibria. 
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

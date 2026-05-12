@@ -1,0 +1,159 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Main Preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{pgflibraryarrows}
+\usepackage{pgflibrarysnakes}
+\usepackage{upgreek}
+\usepackage{tipa}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage{floatrow}
+\usepackage{gensymb}
+\usepackage{caption}
+
+\usepackage[T1]{fontenc}
+\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+
+\DeclareCaptionLabelFormat{andtable}{#1~#2  \&  \tablename~\thetable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header/footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\setlength\headsep{30pt}
+\lhead{P3.WS1}
+\rhead{Kutztown University -- MATH 210}
+\fancyfoot{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\Large{\textsc{Phase 3 (part 1): Network Basics}}\\
+\end{center}
+
+\begin{enumerate}[{$1.]$}]
+\item Consider the undirected graph below.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0, every node/.style={circle, draw=black, fill=white, inner sep=2pt}]
+\node (A) at (0,2) {$A$};
+\node (B) at (2,2) {$B$};
+\node (C) at (4,2) {$C$};
+\node (D) at (0,0) {$D$};
+\node (E) at (2,0) {$E$};
+\node (F) at (4,0) {$F$};
+
+\draw (A)--(B);
+\draw (B)--(C);
+\draw (A)--(D);
+\draw (B)--(E);
+\draw (C)--(F);
+\draw (D)--(E);
+\draw (E)--(F);
+\draw (B)--(D);
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[{$a.)$}]
+\item Write the vertex set $V$ and edge set $E$.  Note: $E$ is also the \textit{edge list}.
+\vfill
+\item How many vertices and edges does the graph have?
+\vfill
+\item Compute the degree of nodes $A$ and $B$. 
+\vfill
+\item Write the \textit{adjacency list} of the graph.
+\vfill
+\item Fill in the \textit{adjacency matrix} $A$ where $A_{ij}=1$ if there is an edge between the vertices and $0$ otherwise. What do you notice about this matrix?  How can we compute $\text{deg}(B)$ from this matrix? 
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c|cccccc}
+ & $A$ & $B$ & $C$ & $D$ & $E$ & $F$\\ \hline
+$A$ &  &  &  &  &  &  \\
+$B$ &  &  &  &  &  &  \\
+$C$ &  &  &  &  &  &  \\
+$D$ &  &  &  &  &  &  \\
+$E$ &  &  &  &  &  &  \\
+$F$ &  &  &  &  &  &  \\
+\end{tabular}
+
+\item Create this graph in Python using an edge list, adjacency list, and the adjacency matrix. 
+
+
+\end{enumerate}
+
+
+\pagebreak 
+
+
+
+
+\item Suppose the same graph is now weighted, with edge weights shown below:
+
+\begin{center}
+\begin{tabular}{c|c}
+Edge & Weight \\ \hline
+$A\!-\!B$ & 3 \\
+$B\!-\!C$ & 2 \\
+$A\!-\!D$ & 4 \\
+$B\!-\!E$ & 5 \\
+$C\!-\!F$ & 1 \\
+$D\!-\!E$ & 2 \\
+$E\!-\!F$ & 3 \\
+$B\!-\!D$ & 2 \\
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[{$a.)$}]
+\item Create this graph in Python using an edge list with the corresponding weights.
+
+\item Compute the \textit{strength} of vertex $B$.
+\vfill
+
+\item Using weights, which path from $A$ to $F$ has smaller total weight?
+Compare these two paths by total weight:
+\[
+A\to B\to E\to F
+\qquad\text{and}\qquad
+A\to D\to E\to F.
+\]
+\vfill
+\end{enumerate}
+
+\item Use Python to solve parts $b$ and $c$ above.  Then, find the \textit{shortest path} from node $A$ to node $F$.  
+
+\end{enumerate}
+
+%
+%\item \textbf{Paths \& connectivity.}
+%\begin{enumerate}[{$a.)$}]
+%\item Find one path from $A$ to $F$. (Write the sequence of vertices.)
+%\vspace{0.6in}
+%
+%\item What is the \textbf{shortest path length} (fewest edges) from $A$ to $F$? Give one shortest path.
+%\vspace{0.8in}
+%
+%\item If vertex $B$ is removed (delete $B$ and all edges touching $B$), is the remaining graph still connected? Explain briefly.
+%\vspace{1.0in}
+%\end{enumerate}
+
+
+
+
+\end{document}
