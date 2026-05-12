@@ -42,7 +42,7 @@ for i in range(N_loop):
     
     #plot the numerical solution
     plt.figure(1)
-    plt.plot(t, y, 'b-', linewidth=4)
+    plt.plot(t, y, 'b-', linewidth=2)
     if i == N_loop-1:
         plt.plot(t,m*np.ones_like(t),'k:', linewidth=3)
         plt.plot(t,M*np.ones_like(t),'k:', linewidth=3)

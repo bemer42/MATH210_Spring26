@@ -6,15 +6,15 @@ from scipy.integrate import solve_ivp
 
 # Time Discretization
 t_0 = 0
-t_end = 8
-N_time = int(1e3)
+t_end = 6
+N_time = int(1e4)
 t_span = np.linspace(t_0, t_end, N_time)
 
 # Define parameters
 R = 60
 
 # Define initial conditions
-x_0 = 3
+x_0 = 10
 y_0 = 20
 
 Y_0 = [x_0, y_0]
