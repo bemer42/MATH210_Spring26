@@ -68,15 +68,15 @@
 \runningfootrule
 \firstpageheader{Kutztown University}{  }{MATH 210}
 \firstpageheadrule
-\runningheader{P2.H1-2}{ }{MATH 210}
+\runningheader{P3.HW}{ }{MATH 210}
 \firstpagefooter{}{}{} 
 \runningfooter{}{}{Page \thepage\ of \numpages}
 
 
 % TITLE PAGE
-\newcommand{\assignmentname}{Phase 2 -- Homework I \& II} % Assignment title
+\newcommand{\assignmentname}{Phase 3 -- Homework} % Assignment title
 \newcommand{\coursetitle}{MATH 210 -- Mathematical Computing and Typesetting}
-\newcommand{\duedate}{Due: Friday, March 6 by 11:59 PM on D2L} % Class/lecture time
+\newcommand{\duedate}{Due: Friday, April 10 by 11:59 PM on D2L} % Update as needed
 \newcommand{\readsections}{\, } % Teacher/lecturer
 \newcommand{\semester}{\, }
 \title{
@@ -130,8 +130,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Reminders:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Remember to begin your \texttt{py} file with \texttt{import numpy as np} and \verb|import matplotlib.pyplot as plt|.  For some of the problems below, use \texttt{import scipy.linalg as la}.
-
+Remember to begin each \texttt{py} file with \texttt{import numpy as np} and \verb|import matplotlib.pyplot as plt|.  
+For this assignment you will also need \texttt{import networkx as nx}.  
+If you compute eigenvalues/eigenvectors in Python, you may use \texttt{np.linalg.eig}.  
 
 % Blank Page
 \clearpage
@@ -140,76 +141,117 @@ Remember to begin your \texttt{py} file with \texttt{import numpy as np} and \ve
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % NUMBER 1 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\question Create a Python program that will solve the following system of equations by setting up the proper matrix equation and solving it in two ways: one way using $\texttt{la.inv}$ and another using $\texttt{la.solve}$:
+\question Consider the matrix
+\[
+A=\begin{bmatrix}
+5 & 2\\
+1 & 2
+\end{bmatrix}.
+\]
 
-\begin{center}
-\includegraphics[width = .45\textwidth]{P2_HW_Figure_1.png}
-\end{center}
+\begin{parts}
+\part Compute the characteristic polynomial $\det(A-\lambda I)$ and find the eigenvalues of $A$.  Type your work explicitly below.
 
-Your final output in Python should print the solution vector $\boldsymbol{x}$.  Type up the handwritten system above, by replacing the picture with the actual typed up equations in \LaTeX.  You will have to use the \texttt{align} environment and align the equations at the equal sign. In the space below, type the matrix $A$, the vector $\boldsymbol{x}$, and the vector $\boldsymbol{b}$.
+\vfill
 
-  
+\part For each eigenvalue, find a corresponding eigenvector.  Type your work explicitly below and clearly label which eigenvector corresponds to which eigenvalue.
+
+\vfill
+
+\part Verify your answers by checking that $A\mathbf{v}=\lambda \mathbf{v}$ for each eigenpair $(\lambda,\mathbf{v})$.
+
+\vfill
+
+\part In a Python file, define $A$ as a NumPy array.  Use \texttt{np.linalg.eig} to compute eigenvalues and eigenvectors.  Print the eigenvalues/eigenvectors.
+
+\end{parts}
 
 \pagebreak
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % NUMBER 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\question Create a \texttt{py} file in Python that defines the following matrices.  I want you to explore the built-in functions that are used to create large matrices.  Each of these matrices below can be constructed in one or two lines \textit{without} a for loop. 
+\question Consider the following three matrices.  
 
-\begin{enumerate}
-\item[$a.)$] Define $A$ as a $30\times 20$ matrix of threes using \texttt{np.ones}.
-\item[$b.)$] Using \texttt{np.reshape} and \texttt{np.arange}, define $B$ as the $10 \times 10$ matrix:
-\[\displaystyle \begin{bmatrix} 1 & 11 & \cdots & 91 \\ 2 & 12 & \cdots & 92 \\ 
-\vdots & \vdots & \ddots & \vdots \\
-10 & 20 & \cdots & 100\end{bmatrix}.\]
-\item[$c.)$] Using \texttt{np.diag} and \texttt{np.ones} more than once, define $C$ as the $16\times 16$ matrix: 
-\[\displaystyle \begin{bmatrix} -2 & 1 & 0 & 0 &  \cdots & 0 & 1 \\ 
-1 & -2 & 1 & 0 & \cdots & 0 & 0 \\ 
-0 & 1 & -2 & 1  & \cdots & 0 & 0 \\ 
-\vdots & \ddots &  \ddots & \ddots &  \ddots & \ddots & \vdots \\
-0 & 0  & \cdots & 1& -2 & 1 & 0\\
-0 & 0  & \cdots & 0&  1& -2 & 1\\
-1 & 0  & \cdots & 0 & 0  &1& -2 \end{bmatrix}.\]
-(This is a \textit{differentiation matrix}.) Use the command \texttt{plt.spy(C)} to plot the sparsity of this matrix in Figure 1. 
+Let the nodes be
+\[
+\{A,B,C,D,E\}.
+\]
+You are given three symmetric weighted adjacency matrices:
+\[
+A_{\text{strong}}=
+\begin{bmatrix}
+0 & 4 & 2 & 0 & 0\\
+4 & 0 & 1 & 2 & 0\\
+2 & 1 & 0 & 3 & 0\\
+0 & 2 & 3 & 0 & 2\\
+0 & 0 & 0 & 2 & 0
+\end{bmatrix},
+\qquad
+A_{\text{medium}}=
+\begin{bmatrix}
+0 & 0 & 0 & 2 & 0\\
+0 & 0 & 1 & 1 & 3\\
+0 & 1 & 0 & 0 & 1\\
+2 & 1 & 0 & 0 & 0\\
+0 & 3 & 1 & 0 & 0
+\end{bmatrix},
+\qquad
+A_{\text{weak}}=
+\begin{bmatrix}
+0 & 0 & 1 & 0 & 1\\
+0 & 0 & 0 & 0 & 0\\
+1 & 0 & 0 & 0 & 2\\
+0 & 0 & 0 & 0 & 1\\
+1 & 0 & 2 & 1 & 0
+\end{bmatrix}.
+\]
 
-\item[$d.)$] Read about \texttt{la.toeplitz} and use it to make the matrix from part $c.)$.  Call this matrix $D$.
+Define the combined interaction matrix
+\[
+A(\alpha)=A_{\text{strong}}+\alpha A_{\text{medium}}+\alpha^2 A_{\text{weak}}.
+\]
 
-\item[$e.)$] Use \texttt{la.toeplitz}, \texttt{np.triu}, and whatever else to make the following $8\times 8$ matrix:
-\[\displaystyle E = \begin{bmatrix} 1 & 2 & 3 & \cdots & 8  \\ 
-0  & 1 & 2 & \cdots & 7 \\ 
-\vdots & \ddots & \ddots & \ddots & \vdots \\
-0 &  \cdots & 0 & 1 & 2 \\
-0 &  \cdots & 0 & 0 & 1\end{bmatrix}.\]
-Use the command \texttt{plt.spy(E)} to plot the sparsity of this matrix in Figure 2.
- 
-\item[$f.)$] Use \texttt{la.toeplitz} and whatever else to create the following $8\times 8$ matrix:
-\[\displaystyle F = \begin{bmatrix} 1 & \frac{1}{2} & \frac{1}{3} & \cdots & \frac{1}{8}  \\ 
-\frac{1}{2}  & 1 & \frac{1}{2} & \cdots & \frac{1}{7} \\ 
-\vdots & \ddots & \ddots & \ddots & \vdots \\
-\frac{1}{7} &  \cdots & \frac{1}{2} & 1 & \frac{1}{2} \\
-\frac{1}{8} &  \cdots & \frac{1}{3} & \frac{1}{2} & 1\end{bmatrix}.\]
+\begin{parts}
 
+\part Compute the strength of \emph{every} node, $s_A(\alpha),s_B(\alpha),s_C(\alpha),s_D(\alpha),s_E(\alpha)$, and simplify each expression.  Type them below.
+
+\vfill
+
+\part Find the intersection parameter $\alpha$ such that the strengths of nodes $C$ and $E$ are equal, i.e.,
+\[ s_C(\alpha)=s_E(\alpha). \]
+Solve exactly for $\alpha$ and clearly show your algebra below.  (Note: $\alpha$ could be bigger than 1.)
+
+\vfill
+
+\part Follow the code in the Python file called \verb|bemerick_p3_ws2_1.py|.  Create a new file that successfully performs the following:
+\begin{enumerate}[(i)]
+\item Define $A_{\text{strong}}$, $A_{\text{medium}}$, and $A_{\text{weak}}$ as \verb|numpy| arrays.
+\item Define functions that return the strength of any two nodes, say $u$ and $v$.
+\item Plot the two quadratic functions.
+\item Confirm numerically the value of $\alpha$ you found in part (c) by using \verb|root_scalar| to find the intersection of $s_C(\alpha)$ and $s_E(\alpha)$.  
+\item Modify the function \verb|plot_weighted_graph| to plot the weighted graph $A(\alpha)$ by introducing another input $A_{medium}$.  Plot the graph of $A(0.5)$ and include it in the \LaTeX\,report below.
 \end{enumerate}
+
+\end{parts}
 
 \pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % NUMBER 3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\question In this problem you are trying to find an approximation to the periodic function $f(x) = e^{\sin(x-1)}$ over one period, $0\leq x \leq 2\pi$.  In Python, let \verb|x = np.linspace(0, 2*np.pi, int(200))| and \texttt{y} be the evaluation of $f$ at those points.
-\begin{enumerate}
-	\item[$a.)$] Fit a degree 7 polynomial to these data by using the normal equations and the appropriate truncated Vandermonde matrix $A$. 
-	\item[$b.)$] Fit the following sinusoidal function 
-		\[ f(x) = c_0 + c_1 \cos(x) + c_2 \sin(x) + c_3\cos(2x) + c_4\sin(2x) \]
-		using \verb|scipy.optimize.curve_fit|.  
-	\item[$c.)$] Plot the original function, and the two approximations together on a well-labeled graph. In your \LaTeX report, include the graph below. 
-	\item[$d.)$] Compute the $R^2$ value for each function and print the value for each model.
-\end{enumerate}
+\question Consider the undirected graph $G$ with vertex set
+\[ V=\{A,B,C,D,E,F\} \]
+and edge set
+\[ E=\{AB,AC,BC,BD,CE,DE,DF,EF\}. \]
 
+\begin{parts}
+\part Use Python to plot this graph and include it below.  
+\vfill
+\part In the same Python file, compute the closeness, betweenness, and eigenvector centrality.  Include them all below and comment on if they agree.  Which node is the ``most important?" 
+\vfill
 
-
+\end{parts}
 
 \end{questions}
-\end{document} 
+\end{document}

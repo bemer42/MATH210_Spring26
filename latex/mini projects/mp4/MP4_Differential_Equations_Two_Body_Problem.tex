@@ -1,0 +1,114 @@
+\documentclass[article, 11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preamble:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{palatino, url, multicol}
+\usepackage{enumerate}
+\usepackage{ulem}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Start Document:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Project Title:
+\begin{center}
+\boxed{\LARGE{\textbf{\textsc{MINI-PROJECT 4}}}}\\
+\Huge{\textbf{\textsc{Differential Equations \& Modeling: The Two-Body Problem}}}\\
+\end{center}
+
+\vspace{.6cm}
+
+% Brief Summary:
+\noindent \boxed{\textbf{\textsc{Brief Summary}}}
+
+\vspace{-.35cm}
+\noindent \hrulefill
+
+This mini-project uses differential equations to derive and simulate the classical two-body problem under Newtonian gravity. You will (1) derive the system of ODEs governing the motion of two masses interacting via an inverse-square gravitational force, (2) derive and interpret the motion of the center of mass, and (3) numerically solve and visualize trajectories for chosen initial conditions. A key goal is connecting the mathematical derivation to a system of nonlinear differential equations for which we can computationally/numerically solve in Python to get an idea of the trajectory of the bodies.  
+
+\vspace{.35cm}
+
+% Goals:
+\noindent \boxed{\textbf{\textsc{Goals}}}
+
+\vspace{-.35cm}
+\noindent \hrulefill
+
+\begin{itemize}
+\item Derive the two-body problem equations of motion from Newton's laws and Newton's law of gravitation.
+\item Define the center of mass and formulate how the position vector of the center of mass changes depending on each individual body.
+\item Reduce and/or rewrite the model in a convenient first-order ODE system for numerical simulation.
+\item Use Python to simulate trajectories and communicate results through clear figures and a short animation/movie.
+\end{itemize}
+
+\vspace{.35cm}
+
+% LaTeX Deliverables:
+\noindent \boxed{\textbf{\textsc{\LaTeX\, Deliverables}}}
+
+\vspace{-.26cm}
+\noindent \hrulefill
+
+\begin{itemize}
+\item A short \LaTeX\, report that is clearly written and well-organized.
+\item Derive the two-body problem system of equations starting from Newton's laws and the gravitational force.  Include a derivation for the center of mass.  Also, if you want to show that the center of mass has constant velocity, include that as well (not necessary for full credit). 
+\item Clearly define all variables and parameters.
+\item Include at least one figure with a caption that shows a trajectory of the two-body problem for a set of initial conditions.   The figure must also show the center of massInclude axis labels, a legend, and a title.
+\item Provide an interpretation or description of the motion, in particular noting how the center of mass moves. 
+\end{itemize}
+
+\vspace{.35cm}
+
+% Python Deliverables:
+\noindent \boxed{\textbf{\textsc{Python Deliverables}}}
+
+\vspace{-.35cm}
+\noindent \hrulefill
+
+\begin{itemize}
+\item A Python script that sets parameters $G$, $m_1$, and $m_2$ and initial conditions (positions and velocities), writes the model as a first-order ODE system (introduce velocities as additional variables), numerically solves the system over a chosen time interval, and produces and saves the required trajectory figure used in the \LaTeX\ write-up.
+  
+\item The Python script also creates and saves a movie/animation of the motion that shows both bodies and the center of mass. 
+\item All plots must have titles, axis labels, legends, and readable formatting.
+
+\end{itemize}
+
+\vspace{.35cm}
+
+% Suggested Analysis Questions (optional):
+\noindent \boxed{\textbf{\textsc{Suggested Analysis Questions}}}
+
+\vspace{-.28cm}
+\noindent \hrulefill
+
+
+\begin{itemize}
+\item How do different initial velocities change the qualitative behavior?
+\item How does changing the mass ratio $m_1/m_2$ affect each body's path relative to the center of mass?
+\end{itemize}
+
+\vspace{.35cm}
+
+% AI Disclosure:
+\noindent \boxed{\textbf{\textsc{AI Disclosure:}}}
+
+\vspace{-.35cm}
+\noindent \hrulefill
+
+If you use AI in any way, you must include an Appendix in the write-up that notes the LLM used and provides a list of the prompts you used. You may use AI for suggestions related to Python code, \LaTeX\, syntax, or other general ideas, but the report should not be copy-and-pasted from AI.
+
+\pagebreak
+
+\end{document}

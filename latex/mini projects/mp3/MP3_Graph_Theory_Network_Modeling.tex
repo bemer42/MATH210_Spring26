@@ -1,0 +1,134 @@
+% MP3_Graph_Theory_Network_Models.tex
+\documentclass[article, 11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preamble:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{palatino, url, multicol}
+\usepackage{enumerate}
+\usepackage{ulem}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Start Document:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Project Title:
+\begin{center}
+\boxed{\LARGE{\textbf{\textsc{MINI-PROJECT 3}}}}\\
+\Huge{\textbf{\textsc{Graph Theory Network Models}}}\\
+\end{center}
+
+\vspace{.6cm}
+
+% Brief Summary:
+\noindent \boxed{\textbf{\textsc{Brief Summary}}}
+
+\vspace{-.35cm}
+\noindent \hrulefill
+
+This mini-project uses university enrollment data to build and analyze a network of academic departments connected by students completing majors and minors. For each year from 2006 to 2024, you will construct a weighted, undirected department network where edge weights measure how strongly two departments are connected by students with layers and an interaction parameter: 
+\[
+A(\alpha) = A_{\text{mm}} + \alpha A_{\text{mn}} + \alpha^2 A_{\text{nn}},
+\] 
+
+You will investigate two main themes: (1) Community structure over time -- detect groups of departments that are more connected internally than externally, and track how community structure changes over time using modularity; and (2) Department centrality over time -- compute centrality measures each year and interpret which departments act as ``hubs'' or ``bridges'' in the curriculum ecosystem. A key goal is connecting graph measures (centrality, modularity, communities) to a real institutional setting, and communicating trends clearly using figures.
+
+\vspace{.35cm}
+
+
+% Goals:
+\noindent \boxed{\textbf{\textsc{Goals}}}
+
+\vspace{-.35cm}
+\noindent \hrulefill
+
+\begin{itemize}
+\item Build a weighted department network for each year from 2006 to 2024 using Python.
+\item Compute and interpret {centrality measures over time}, such as: strength (weighted degree), closeness centrality, betweenness centrality, eigenvector centrality. 
+\item Detect {community structure} each year using a modularity-based method, and track: the number of communities over time, modularity over time, notable shifts in membership .
+\item Produce clear, well-labeled visualizations that communicate network structure and trends.
+\end{itemize}
+
+\vspace{.35cm}
+
+% LaTeX Deliverables:
+\noindent \boxed{\textbf{\textsc{\LaTeX\, Deliverables:}}}
+
+\vspace{-.26cm}
+\noindent \hrulefill
+
+\begin{itemize}
+\item A short \LaTeX\, report that is clearly written and well-organized.
+\item \text{Include at least three figures with captions}:
+  \begin{enumerate}
+    \item \text{Graph figure:} a visualization of the department network for at least one selected year (or multiple years side-by-side). Use edge width/opacity to represent weight and a consistent layout when comparing years.
+    \item \text{Centrality figure:} a plot showing at least one centrality measure over time (2006--2024). Examples: top 5 departments by eigenvector centrality each year; or a line plot for a small set of departments you select.
+    \item \text{Communities/modularity figure:} a plot of \text{modularity over time}. If possible, also show number of communities over time or a community membership heatmap/diagram for selected years.
+  \end{enumerate}
+\item Provide interpretation: explain \text{why} certain departments appear central, and what community structure suggests about clusters of programs.
+\end{itemize}
+
+\vspace{.35cm}
+
+% Python Deliverables:
+\noindent \boxed{\textbf{\textsc{Python Deliverables:}}}
+
+\vspace{-.35cm}
+\noindent \hrulefill
+
+\begin{itemize}
+\item A Python script or notebook that:
+  \begin{itemize}
+  \item loads the data for 2006--2024,
+  \item constructs the network(s) each year,
+  \item computes centrality metrics each year,
+  \item detects communities each year and computes modularity,
+  \item generates and saves the required figures.
+  \end{itemize}
+\item Use \texttt{networkx} for graph construction and centralities. For community detection, you may use:
+  \begin{itemize}
+    \item \texttt{networkx.algorithms.community} methods, or
+    \item another standard Python community detection package.
+  \end{itemize}
+\item All plots must have titles, axis labels, legends, and readable formatting.
+\end{itemize}
+
+\vspace{.35cm}
+
+% Suggested Analysis Questions (optional):
+\noindent \boxed{\textbf{\textsc{Suggested Analysis Questions}}}
+
+\vspace{-.35cm}
+\noindent \hrulefill
+
+\begin{itemize}
+\item Which departments are consistently central across years? Which departments rise/fall sharply?
+\item Do different centralities (strength vs.\ betweenness vs.\ eigenvector) tell different stories? Give at least one example.
+\item When modularity changes, what changes in the network might explain it (new bridges, merging/splitting clusters, etc.)?
+\item Are communities stable over time, or do departments frequently change communities?
+\end{itemize}
+
+\vspace{.35cm}
+
+% AI Disclosure:
+\noindent \boxed{\textbf{\textsc{AI Disclosure:}}}
+
+\vspace{-.35cm}
+\noindent \hrulefill
+
+If you use AI in any way, you must include an Appendix in the write-up that notes the LLM used and provides a list of the prompts you used. You may use AI for suggestions related to Python code, \LaTeX\, syntax, or other general ideas, but \textit{the report should not be copy-and-pasted from AI.}
+
+\pagebreak
+
+\end{document}

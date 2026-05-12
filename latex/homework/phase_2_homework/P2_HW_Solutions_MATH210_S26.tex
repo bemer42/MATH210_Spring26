@@ -22,6 +22,8 @@
 \usepackage{multirow}
 \usepackage{arydshln}
 \usepackage{verbatim}
+\usepackage{systeme}
+
 
 \usepackage{pgfkeys,pgfcalendar}
 
@@ -74,7 +76,7 @@
 
 
 % TITLE PAGE
-\newcommand{\assignmentname}{Phase 2 -- Homework I \& II} % Assignment title
+\newcommand{\assignmentname}{Phase 2 -- Homework} % Assignment title
 \newcommand{\coursetitle}{MATH 210 -- Mathematical Computing and Typesetting}
 \newcommand{\duedate}{Due: Friday, March 6 by 11:59 PM on D2L} % Class/lecture time
 \newcommand{\readsections}{\, } % Teacher/lecturer
@@ -123,7 +125,7 @@
 % Uncomment the syntax below when you type up the solutions and type 
 % your name.
 \begin{center}
-	\large{\textsc{\textcolor{red}{Solutions by [YOUR NAME HERE]}}}
+	\large{\textsc{\textcolor{red}{Solutions by Brooks Emerick}}}
 \end{center}
 \vfill
 
@@ -143,13 +145,26 @@ Remember to begin your \texttt{py} file with \texttt{import numpy as np} and \ve
 \question Create a Python program that will solve the following system of equations by setting up the proper matrix equation and solving it in two ways: one way using $\texttt{la.inv}$ and another using $\texttt{la.solve}$:
 
 \begin{center}
-\includegraphics[width = .45\textwidth]{P2_HW_Figure_1.png}
+	\includegraphics[width = .35\textwidth]{P2_HW_Figure_1.png}
 \end{center}
 
-Your final output in Python should print the solution vector $\boldsymbol{x}$.  Type up the handwritten system above, by replacing the picture with the actual typed up equations in \LaTeX.  You will have to use the \texttt{align} environment and align the equations at the equal sign. In the space below, type the matrix $A$, the vector $\boldsymbol{x}$, and the vector $\boldsymbol{b}$.
+Your final output in Python should print the solution vector $\boldsymbol{x}$.  Type up the handwritten system above, by replacing the picture with the actual typed up equations in \LaTeX.  You will have to use the \texttt{align} environment and align the equations at the equal sign. In the space below, type the matrix $A$, the vector $\boldsymbol{x}$, and the vector $\boldsymbol{b}$.\\
 
+\textsc{Solution:} \\
+
+The system above can be typed up as below:
+\begin{align*}
+	-3x_1  +  x_2  + x_3  &=  5 \\ 
+	2x_1  -  x_2  +  4x_3  &= 1 \\ 
+	x_1  +  3x_2  -  11x_3  &= -2 \end{align*}
   
-
+This set of linear equations can be represented by the matrix equation $A\boldsymbol{x} = \boldsymbol{b}$, where 
+\[ A = \begin{bmatrix} 
+	-3 & 1 & 1 \\ 
+	2 & -1 & 4 \\ 
+	1 & 3 & -11 \end{bmatrix}, \qquad \boldsymbol{x} = \begin{bmatrix}
+		x_1 \\ x_2 \\ x_3 \end{bmatrix}, \qquad \text{and} \quad 
+		\boldsymbol{b} = \begin{bmatrix} 5 \\ 1 \\ -2 \end{bmatrix}.\]
 \pagebreak
 
 
@@ -204,7 +219,11 @@ Use the command \texttt{plt.spy(E)} to plot the sparsity of this matrix in Figur
 	\item[$b.)$] Fit the following sinusoidal function 
 		\[ f(x) = c_0 + c_1 \cos(x) + c_2 \sin(x) + c_3\cos(2x) + c_4\sin(2x) \]
 		using \verb|scipy.optimize.curve_fit|.  
-	\item[$c.)$] Plot the original function, and the two approximations together on a well-labeled graph. In your \LaTeX report, include the graph below. 
+	\item[$c.)$] Plot the original function, and the two approximations together on a well-labeled graph. In your \LaTeX\, report, include the graph below. 
+	
+	\begin{center}
+		\includegraphics[width = .7\textwidth]{P2_HW_Figure_2.eps}
+	\end{center}
 	\item[$d.)$] Compute the $R^2$ value for each function and print the value for each model.
 \end{enumerate}
 

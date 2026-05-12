@@ -1,0 +1,101 @@
+% MP2_Linear_Algebra_Curve-Fitting.tex
+\documentclass[article, 11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preamble:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{palatino, url, multicol}
+\usepackage{enumerate}
+\usepackage{ulem}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Start Document:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Project Title:
+\begin{center}
+\boxed{\LARGE{\textbf{\textsc{MINI-PROJECT 2}}}}\\
+\Huge{\textbf{\textsc{Linear Algebra Curve-Fitting}}}\\
+%\vspace{.15cm}
+%\Large{\textbf{\textsc{Periodic Endpoint Derivative Matching (``Electronic CAM'')}}}
+\end{center}
+
+\vspace{.6cm}
+
+% Brief Summary:
+\noindent \boxed{\textbf{\textsc{Brief Summary}}}
+
+\vspace{-.35cm}
+\noindent \hrulefill
+
+The problem from Omnitech is based on a winding application where one revolution of a frame causes the material payout speed to vary significantly, which can create tension fluctuations. An ``electronic CAM'' is a cyclic command profile that varies the frame servo speed to keep material motion closer to a desired behavior over each revolution. The CAM profile is computed from measurements collected at discrete angles, every $10^\circ$. A major challenge is that a naive curve fit can fail even if the fitted curve values align at the start/end of a revolution, the slopes may not. This produces a visible mismatch when mapping one cycle into the next and can create undesirable transients in motion control. In this mini-project you will use linear algebra to build a \textit{constrained least-squares curve fit} that matches the data at the endpoints with matching derivatives at the endpoints. You will compare unconstrained regression with constrained methods and study how design choices, particularly the degree of the polynomial, affect fit quality and smooth behavior.\\
+
+% Goals:
+\noindent \boxed{\textbf{\textsc{Goals}}}
+
+\vspace{-.35cm}
+\noindent \hrulefill
+
+\begin{itemize}
+\item Use polynomial least-squares regression and build the overdetermined matrix model 	.
+
+\item Write the endpoint constraints as linear equations that incorporates the endpoint requirements, namely that the endpoint values match the data and that the endpoint derivatives are equal. 
+	\item Write Python code that solves the linear system and outputs an error analysis and figures. 
+	\item Provide a written \LaTeX\, report that formally presents your problem and solution.
+\end{itemize}
+
+
+% LaTeX Deliverables:
+\noindent \boxed{\textbf{\textsc{\LaTeX\, Deliverables:}}}
+
+\vspace{-.26cm}
+\noindent \hrulefill
+
+\begin{itemize}
+	\item The report structure follows this template and is clearly written.
+	\item Include at least one figure with a caption showing  the data and fitted curve over one period for a variety of polynomial fits. 
+	\item Provide your methodology in matrix form including the construction of the linear systems. 
+	\item Provide a short comparison between unconstrained and constrained fits, emphasizing the impact on cyclic smoothness.
+\end{itemize}
+
+\vspace{.35cm}
+
+
+% Python Deliverables:
+\noindent \boxed{\textbf{\textsc{Python Deliverables:}}}
+
+\vspace{-.35cm}
+\noindent \hrulefill
+
+\begin{itemize}
+	\item A Python file that solves the system using the \texttt{numpy.linalg} module. 
+	\item Include at least one well-designed plot with title, axis labels, and legend (as needed).
+%	\item You may use built-in tools (e.g., \texttt{numpy.linalg.lstsq}) and/or constrained optimization tools (e.g., \texttt{scipy.optimize.minimize} or \texttt{scipy.linalg.lstsq} with a constraint method), but your write-up must clearly explain the linear algebra formulation of the constraints.
+\end{itemize}
+
+\vspace{.35cm}
+
+% AI Disclosure:
+\noindent \boxed{\textbf{\textsc{AI Disclosure:}}}
+
+\vspace{-.35cm}
+\noindent \hrulefill
+
+If you use AI in any way, you must include an Appendix in the write-up that notes the LLM used and provides a list of the prompts you used. You may use AI for suggestions related to Python code, \LaTeX\, syntax, or other general ideas, but \textit{the report should not be copy-and-pasted from AI.}
+
+
+\pagebreak
+
+
+\end{document}
